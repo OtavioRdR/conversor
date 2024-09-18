@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Câmbio do Yoshioka 🇪🇺💶</title>
+    <style>
+        /* Seu CSS aqui */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #cce4ff, #e6e6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #003399;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .converter input, .expense-list input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .converter button, .expense-list button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .converter button:hover, .expense-list button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .expense-list {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .expense-list button {
+            background-color: #28a745;
+        }
+
+        .expense-list button:hover {
+            background-color: #218838;
+        }
+
+        #expenseList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #expenseList li {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #expenseList li button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #expenseList li button:hover {
+            background-color: #c82333;
+        }
+
+        #totalExpense {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Câmbio do Yoshioka 🈂</h1>
+        <div class="converter">
+            <input type="number" id="euroInput" placeholder="Digite o valor em euros">
+            <button onclick="convert()">Converter 🌟</button>
+            <p id="result">Valor em reais: R$0,00</p>
+        </div>
+
+        <!-- Seção da Lista de Gastos -->
+        <div class="expense-list">
+            <h2>Lista de Gastos 💸</h2>
+            <input type="text" id="expenseDescription" placeholder="Descrição do gasto">
+            <input type="number" id="expenseValue" placeholder="Valor do gasto">
+            <button onclick="addExpense()">Adicionar Gasto</button>
+            <ul id="expenseList"></ul>
+            <p id="totalExpense">Total de gastos: R$0,00</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
